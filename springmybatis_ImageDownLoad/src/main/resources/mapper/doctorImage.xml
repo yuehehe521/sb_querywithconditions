@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hehe.dao.DoctorImageMapper">
+	
+    <select id="getImage" parameterType="java.lang.Integer" resultType="com.hehe.pojo.DoctorImage">
+		select image from haodf_doctor_img where id = #{id}
+	</select>
+<!--
+	<resultMap id="queryBaseResultMap" type="com.hehe.pojo.DoctorImage" >
+		<result column="image" property="image" typeHandler="com.hehe.typehandler.BlobTypeHandler"/>
+	</resultMap>下面是另一个 不用管
+-->
+
+	<select id="getDoctorId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select doctor_id from haodf_doctor_img where id = #{id}
+	</select>
+
+</mapper>

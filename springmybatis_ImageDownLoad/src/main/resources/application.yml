@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+    session:
+      timeout:
+        4h
+
+spring.datasource:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  #url: jdbc:mysql://172.16.56.80:3306/kol?characterEncoding=utf-8
+  url: jdbc:mysql://39.105.150.134:3306/test?characterEncoding=utf-8
+  username: root
+  #password: admin123456.COM
+  password: 123456
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.hehe.pojo
+
+
+spring:
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  freemarker:
+    checkTemplateLocation:
+      false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB
+      enabled: true
